@@ -59,8 +59,7 @@ const RewardSchema = new Schema ({
     },
     tokensWorth: {
         type: Number,
-        required: [true, 'The token value is required!'],
-        unique: true
+        required: [true, 'The token value is required!']
     },
     reward: {
         type: String,

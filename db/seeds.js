@@ -51,7 +51,7 @@ User.remove({}).then(() => {
         firstName: 'Simone',
         profilePic: 'https://i.imgur.com/yIOfHBf.jpg',
         birthMonth: 'March',
-        chores: []
+        chores: ['Wash Dishes']
         })
     const chore4 = new Chore({
         task: 'Wash Dishes',
@@ -114,99 +114,78 @@ User.remove({}).then(() => {
     return mom.save()
     console.log(`User ${user.firstName} created`)
 
+// }).then(() => {
+//     const level100a = new Reward({
+//         level: 'Cat-tastic!',
+//         tokensWorth: 100,
+//         reward: 'One whole dollar!',
+//         imageUrl: 'https://i.imgur.com/N34m9Eq.jpg'
+//     })
+//     return level100a.save()
 }).then(() => {
-    const level100a = new Reward({
-        level: 'Cat-tastic!',
-        tokensWorth: 100,
-        reward: 'One whole dollar!',
-        imageUrl: 'https://i.imgur.com/N34m9Eq.jpg'
-    })
     const level100b = new Reward({
         level: 'Cat-tastic!',
         tokensWorth: 100,
         reward: '30 mins iPad Time!',
         imageUrl: 'https://i.imgur.com/RNtonin.jpg'
     })
+    return level100b.save()
+}).then(() => {
     const level100c = new Reward({
         level: 'Cat-tastic!',
         tokensWorth: 100,
         reward: 'Choose Dinner!',
         imageUrl: 'https://i.imgur.com/ADU61Zr.jpg'
     })
+    return level100c.save()
+}).then(() => {
     const level250a = new Reward({
         level: 'Piggy Power!',
         tokensWorth: 250,
         reward: 'Yum, Chocolate Milk!',
         imageUrl: 'https://i.imgur.com/pKIpce8.jpg'
     })
+    return level250a.save()
+}).then(() => {
     const level250b = new Reward({
         level: 'Piggy Power!',
         tokensWorth: 250,
         reward: 'Popsicle Time!',
         imageUrl: 'https://i.imgur.com/kLKMIK1.jpg'
     })
+    return level250b.save()
+}).then(() => {
     const level250c = new Reward({
         level: 'Piggy Power!',
         tokensWorth: 250,
         reward: 'Ice Cream!',
         imageUrl: 'https://i.imgur.com/E6IidJG.jpg'
     })
+    return level250c.save()
+}).then(() => {
     const level500a = new Reward({
         level: 'Whale-erific!',
         tokensWorth: 500,
         reward: 'Pizza Party w/3 Friends!',
         imageUrl: 'https://i.imgur.com/1qUm08D.jpg'
     })
+    return level500a.save()
+}).then(() => {
     const level500b = new Reward({
         level: 'Whale-erific!',
         tokensWorth: 500,
         reward: 'Pick a Hike, invite 3 Friends!',
         imageUrl: 'https://i.imgur.com/gmmCPbm.jpg'
     })
+    return level500b.save()
+}).then(() => {
     const level500c = new Reward({
         level: 'Whale-erific!',
         tokensWorth: 500,
         reward: 'Art Party, invite 3 Friends!',
         imageUrl: 'https://i.imgur.com/eTuBdbr.jpg'
     })
-})
-
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level100a.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level100b.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level100c.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level250a.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level250b.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level250c.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level500a.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
-    return level500b.save()
-})
-.then(reward => {
-    console.log(`Reward ${reward.reward} created`)
     return level500c.save()
-    
 }).catch((error) => {
     console.log('!!! ERROR SAVING SEEDED DATA !!!')
     console.log(error)
