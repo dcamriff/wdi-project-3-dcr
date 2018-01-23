@@ -49,7 +49,7 @@ const UserSchema = new Schema({
     },
     chores: [ChoreSchema],
     timestamp: {},
-    usePushEach: true
+    // usePushEach: true
 })
 
 const RewardSchema = new Schema ({
@@ -72,7 +72,7 @@ const RewardSchema = new Schema ({
         default: 'https://i.imgur.com/LlLmKOS.png'
     },
     timestamp: {},
-    usePushEach: true
+    // usePushEach: true
 })
 
 module.exports = {
