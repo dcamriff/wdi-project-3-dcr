@@ -5,13 +5,15 @@ const Reward = require('./models/Reward')
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI
+mongoose.connect(process.env.MONGODB_URI)
 
 mongoose.connection.once('open', () => {
     console.log('Mongoose has connected to MongoDB!')
 })
 
 User.remove({}).then(() => {
+    return Reward.remove({})
+}).then(() => {
     const sylvie = new User({
         firstName: 'Sylvie',
         profilePic: 'https://i.imgur.com/ALtfn7w.jpg',
@@ -39,37 +41,49 @@ User.remove({}).then(() => {
         tokens: 100,
         completed: false
     })
+
+    sylvie.chores.push(chore1, chore2, chore3)
+    return sylvie.save()
+    console.log(`User ${user.firstName} created`)
+
+}).then(() => {
     const simone = new User({
         firstName: 'Simone',
         profilePic: 'https://i.imgur.com/yIOfHBf.jpg',
         birthMonth: 'March',
         chores: []
-    })
+        })
     const chore4 = new Chore({
         task: 'Wash Dishes',
         category: 'Home',
         description: 'Help put dirty cups into dishwasher.',
         tokens: 100,
         completed: false
-    })
+        })
     const chore5 = new Chore({
         task: 'Eat Dinner Veggies',
         category: 'Wellness',
         description: 'Eat all your green veggies.',
         tokens: 200,
         completed: false
-    })
+        })
     const chore6 = new Chore({
         task: 'Put Away Toys',
         category: 'Home',
         description: 'Put all your toys back in their labeled bins.',
         tokens: 100,
         completed: false
-    })
+        })
+    simone.chores.push(chore4, chore5, chore6)
+    return simone.save()
+    console.log(`User ${user.firstName} created`)
+
+}).then(() => {
     const dad = new User({
         firstName: 'Dad',
         profilePic: 'https://i.imgur.com/ZvIiZbT.png',
-        birthMonth: 'June'
+        birthMonth: 'June',
+        chores: []
     })
     const chore7 = new Chore({
         task: 'One Load of Laundry',
@@ -78,10 +92,16 @@ User.remove({}).then(() => {
         tokens: 100,
         completed: false
     })
+    dad.chores.push(chore7)
+    return dad.save()
+    console.log(`User ${user.firstName} created`)
+
+}).then(() => {
     const mom = new User ({
         firstName: 'Mom',
         profilePic: 'https://i.imgur.com/maDNYOB.png',
-        birthMonth: 'January'
+        birthMonth: 'January',
+        chores: []
     })
     const chore8 = new Chore({
         task: 'One Load of Laundry',
@@ -90,14 +110,11 @@ User.remove({}).then(() => {
         tokens: 100,
         completed: false
     })
-
-    sylvie.chores.push(chore1, chore2, chore3)
-    simone.chores.push(chore4, chore5, chore6)
-    dad.chores.push(chore7)
     mom.chores.push(chore8)
+    return mom.save()
+    console.log(`User ${user.firstName} created`)
 
-
-    return Reward.remove({}).then(() => {
+}).then(() => {
     const level100a = new Reward({
         level: 'Cat-tastic!',
         tokensWorth: 100,
@@ -154,23 +171,6 @@ User.remove({}).then(() => {
     })
 })
 
-
-sylvie.save()
-.then(user => {
-    console.log(`User ${user.firstName} created`)
-    return simone.save()
-})
-
-.then(user => {
-    console.log(`User ${user.firstName} created`)
-    return dad.save()
-})
-
-.then(user => {
-    console.log(`User ${user.firstName} created`)
-    return mom.save()
-})
-
 .then(reward => {
     console.log(`Reward ${reward.reward} created`)
     return level100a.save()
@@ -206,8 +206,7 @@ sylvie.save()
 .then(reward => {
     console.log(`Reward ${reward.reward} created`)
     return level500c.save()
-})
-
+    
 }).catch((error) => {
     console.log('!!! ERROR SAVING SEEDED DATA !!!')
     console.log(error)
