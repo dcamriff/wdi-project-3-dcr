@@ -5,16 +5,16 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
     firstName: {
         type: String,
-        required: [true, 'Your first name is required. Thank you!']
+        required: [true, 'Your first name is required. Thank you!'],
         unique: true
-    },
-    dateOfBirth: {
-        type: Date,
-        required: [true, 'Your date of birth is required. Thank you!']
     },
     profilePic: {
         type: String,
         required: false
+    },
+    birthMonth: {
+        type: String,
+        required: true
     }
 })
 
@@ -35,7 +35,7 @@ const ChoreSchema = new Schema({
         type: String,
         required: false
     },
-    tokens: {
+    tokensEarned: {
         type: Number,
         required: false
     },
@@ -51,11 +51,15 @@ const RewardSchema = new Schema ({
     level: {
         type: String,
         required: [true, 'The reward level is required!'],
+    },
+    tokensWorth: {
+        type: Number,
+        required: [true, 'The token value is required!'],
         unique: true
     },
     prize: {
         type: String,
-        required: true
+        required: [true, 'Describe the prize!']
     },
     imageUrl: {
         type: String,
