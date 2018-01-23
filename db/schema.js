@@ -2,21 +2,6 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const UserSchema = new Schema({
-    firstName: {
-        type: String,
-        required: [true, 'Your first name is required. Thank you!'],
-        unique: true
-    },
-    profilePic: {
-        type: String,
-        required: false
-    },
-    birthMonth: {
-        type: String,
-        required: true
-    }
-})
 
 const ChoreSchema = new Schema({
     task: {
@@ -33,18 +18,38 @@ const ChoreSchema = new Schema({
     },
     imageUrl: {
         type: String,
-        required: false
+        required: false,
+        default: 'https://i.imgur.com/xCtPKuq.png'
     },
-    tokensEarned: {
+    tokens: {
         type: Number,
         required: false
     },
-    timestamp: {},
-
     completed: {
         type: Boolean,
         default: 'false'
-    }
+    },
+    timestamp: {},
+    // usePushEach: true
+})
+
+const UserSchema = new Schema({
+    firstName: {
+        type: String,
+        required: [true, 'Your first name is required. Thank you!'],
+        unique: true
+    },
+    profilePic: {
+        type: String,
+        required: false
+    },
+    birthMonth: {
+        type: String,
+        required: true
+    },
+    chores: [ChoreSchema],
+    timestamp: {},
+    usePushEach: true
 })
 
 const RewardSchema = new Schema ({
@@ -57,7 +62,7 @@ const RewardSchema = new Schema ({
         required: [true, 'The token value is required!'],
         unique: true
     },
-    prize: {
+    reward: {
         type: String,
         required: [true, 'Describe the prize!']
     },
@@ -65,7 +70,9 @@ const RewardSchema = new Schema ({
         type: String,
         required: false,
         default: 'https://i.imgur.com/LlLmKOS.png'
-    }
+    },
+    timestamp: {},
+    usePushEach: true
 })
 
 module.exports = {
