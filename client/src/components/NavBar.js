@@ -15,21 +15,30 @@ div {
     align-items: center;
     font-size: 1.25rem;
 }
-`
 
+.Nav-logo {
+    animation: Nav-logo-spin infinite 20s linear;
+    height: 80px;
+}
+@keyframes Nav-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+`
 
 class NavBar extends Component {
     render() {
         return (
             <Nav>
-            <div>
-            <img 
-                width="75" 
-                src={logo} 
-                alt="piggy chore rewarder logo"/>
-            </div>
-            <div>Chore Rewarder</div>
-            <div>home</div>
+                <div>
+                    <img
+                        className="Nav-logo"
+                        width="75"
+                        src={logo}
+                        alt="piggy chore rewarder logo"/>
+                </div>
+                <div>Chore Rewarder</div>
+                <div>home</div>
             </Nav>
         )
     }

@@ -39,6 +39,7 @@ Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned 
  - Create, View, Delete, and Update Chores connected to a user
  - View, Update, and Delete Reward Details
  - Responsiveness on different screen sizes
+ - Animation
 
  ## FUTURE DEVELOPMENT
   - Ability to like and dislike chores with a thumbs up/down button
