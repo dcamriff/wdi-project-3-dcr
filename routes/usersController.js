@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 // DELETE A USER
 router.delete('/:userId', async (req, res) => {
     try {
-        await User.findByIdAndRemove(req.params.ideaId)
+        await User.findByIdAndRemove(req.params.userId)
         res.sendStatus(200)
     }   catch (error) {
         console.log(error)
@@ -41,7 +41,7 @@ router.delete('/:userId', async (req, res) => {
 router.patch('/:userId', async (req, res) => {
     try {
         const updatedUser = 
-        await User.findByIdAndUpdate(req.params.ideaId, req.body, {new: true})
+        await User.findByIdAndUpdate(req.params.userId, req.body, {new: true})
 
         res.json(updatedUser)
     }   catch (error) {
