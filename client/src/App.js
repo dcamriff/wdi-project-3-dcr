@@ -9,9 +9,7 @@ import HomePage from './components/HomePage'
 import axios from 'axios'
 
 class App extends Component {
-  state = {
-    users: []
-  }
+  state = {users: []}
 
   // /GET ALL USERS////
   componentWillMount() {
