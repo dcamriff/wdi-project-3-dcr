@@ -11,12 +11,14 @@ class UserPage extends Component {
     }
 
     async componentWillMount () {
-        const response = await axios.get('/api/ideas')
+        const response = await axios.get('/api/users')
+        // console.log('USERPAGE', response.data)
         this.setState({users: response.data})
+
     }
 
     createUser = async () => {
-        const response = await axios.get(`/api/ideas`)
+        const response = await axios.get(`/api/users`)
         const newUser = response.data
 
         const newUsers = [this.state.users]
@@ -38,6 +40,9 @@ class UserPage extends Component {
     }
 
     render () {
+        const users = this.state.users
+        console.log('Under render', users)
+
         return (
             <div>
 
@@ -46,11 +51,18 @@ class UserPage extends Component {
                     <button onClick={this.createUser}>New User</button>
                 </div>
 
-                    <UserList 
-                    users={this.state.users}
+
+                    <div>
+                        {users.map((user) => {
+                            return (<div>{user.firstName}</div>
+                            )
+                        })}
+                    </div>
+                    {/* users={this.state.users}
                     handleChange={this.handleChange}
                     updateUser={this.updateUser}
-                    deleteUser={this.deleteUser}/>
+                    deleteUser={this.deleteUser}
+                    /> */}
     
             </div>
 
