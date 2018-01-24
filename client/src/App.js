@@ -31,8 +31,8 @@ class App extends Component {
             <Route exact path="/" render={HomePageComponent}/>
             <Route exact path="/users" render={UserPageComponent}/>
             <Route exact path="/users/:userId" component={UserShow}/>
-            {/* <Route exact path="/credits" render={CreditsPageComponent}/> */}
-            {/* <Route exact path="/debits" render={DebitsPageComponent}/> */}
+            {/* <Route exact path="/users/:userId/chores/:choreId" component={ChoresShow}/> */}
+            {/* <Route exact path="/rewards" component={RewardsPage}/> */}
           </Switch>
         {/* </div> */}
         
