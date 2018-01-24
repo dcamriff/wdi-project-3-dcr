@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import NavBar from './NavBar'
 import UserList from './UserList'
+import UserPage from './UserPage'
 
 const Container = styled.div `
 display: grid;
@@ -28,6 +29,7 @@ class HomePage extends Component {
                 <Container>
                 <h1>Home Page Component</h1>
                 <UserList/>
+                <UserPage/>
                 </Container>
             </div>
         )
