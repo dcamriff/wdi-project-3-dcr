@@ -13,16 +13,16 @@ class App extends Component {
     users: []
   }
 
-  ///GET ALL USERS////
-  // componentWillMount() {
-  //   const response = () => {
-  //     return (axios.get('/api/users').then(response => {
-  //       const users = response.data
-  //       console.log(users)
-  //       this.setState({users: users})
-  //     }))
-  //   }
-  // }
+  // /GET ALL USERS////
+  componentWillMount() {
+    const response = () => {
+      return (axios.get('/api/users').then(response => {
+        const users = response.data
+        console.log(users)
+        this.setState({users: users})
+      }))
+    }
+  }
 
 
   render() {
