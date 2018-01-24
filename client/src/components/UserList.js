@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class UserList extends Component {
 
     render () {
-        render (
+        return (
             <div>
                 <h1>UserList Component</h1>
             </div>
