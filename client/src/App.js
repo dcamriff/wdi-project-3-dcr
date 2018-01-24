@@ -1,42 +1,40 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-
-import styled from 'styled-components'
-import HomePage from './components/HomePage'
-// import UserPage from './components/UserPage'
-// import RewardsPage from './components/RewardsPage'
-
 import axios from 'axios'
 
-class App extends Component {
-  state = {users: []}
+import HomePage from './components/HomePage'
+import UserPage from './components/UserPage'
+import UserShow from './components/UserShow'
+import RewardsPage from './components/RewardsPage'
 
-  // /GET ALL USERS////
-  componentWillMount() {
-    const response = () => {
-      return (axios.get('/api/users').then(response => {
-        const users = response.data
-        console.log(users)
-        this.setState({users: users})
-      }))
-    }
+
+class App extends Component {
+  state = {
+    users: []
   }
 
+  // /GET USERS////
+  async componentWillMount() {
+    const response = await axios.get('/api/users')
+    this.setState({users: response.data})
+  }
 
   render() {
     const HomePageComponent = () => (<HomePage/>)
+    const UserPageComponent = () => (<UserPage users={this.state.users}
+    {...this.props}/>)
 
     return (
       <Router>
-        <div className="App">
+        {/* <div className="App"> */}
         <Switch>
             <Route exact path="/" render={HomePageComponent}/>
-            {/* <Route exact path="/userProfile" render={UserProfileComponent}/> */}
-            {/* <Route exact path="/login" render={LogInComponent}/> */}
+            <Route exact path="/users" render={UserPageComponent}/>
+            <Route exact path="/users/:userId" component={UserShow}/>
             {/* <Route exact path="/credits" render={CreditsPageComponent}/> */}
             {/* <Route exact path="/debits" render={DebitsPageComponent}/> */}
           </Switch>
-        </div>
+        {/* </div> */}
         
           
         

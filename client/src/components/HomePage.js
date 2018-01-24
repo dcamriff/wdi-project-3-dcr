@@ -27,7 +27,6 @@ class HomePage extends Component {
                 <NavBar />
                 <Container>
                 <h1>Home Page Component</h1>
-                {/* <img src={logo} alt=""/> */}
                 <UserList/>
                 </Container>
             </div>
