@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 class User extends Component {
 
     render () {
-        render (
+        return (
             <div>
-                <h1>User Component</h1>
+                <img src="#" alt=""/>
+                <strong>{this.props.firsName}</strong>
+                <p>{this.props.birthMonth}</p>
             </div>
         )
     }
