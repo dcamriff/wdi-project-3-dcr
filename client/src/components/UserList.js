@@ -1,15 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
+import User from './User'
+import styled from 'styled-components'
 
-class UserList extends Component {
 
-    render () {
-        return (
-            <div>
-                <h1>UserList Component</h1>
-            </div>
-        )
-    }
-
+const UserList = (props) => {
+    console.log('helo', props)
+    console.log('USERS', props.users)
+    return (
+        <div>
+            {/* {
+                props.users.map((user) => {
+                    return (
+                        <User user={user} {...props} key={user._id}/>
+                        )
+                })
+            } */}
+        </div>
+    )
 }
 
 export default UserList
