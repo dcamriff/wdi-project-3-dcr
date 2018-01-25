@@ -9,20 +9,29 @@ import RewardsPage from './components/RewardsPage'
 
 
 class App extends Component {
-  state = {
-    users: []
-  }
+//   state = {
+//     users: []
+//   }
+
+//   async componentWillMount () {
+//     const response = await axios.get('/api/users')
+//     console.log(response.data)
+//     this.setState({users: response.data})
+
+// }
 
   // /GET USERS////
-  async componentWillMount() {
-    const response = await axios.get('/api/users')
-    this.setState({users: response.data})
-  }
+  // async componentWillMount() {
+  //   const response = await axios.get('/api/users')
+  //   this.setState({users: response.data})
+  // }
 
   render() {
     const HomePageComponent = () => (<HomePage/>)
-    const UserPageComponent = () => (<UserPage users={this.state.users}
-    {...this.props}/>)
+    const UserPageComponent = () => (<UserPage/>)
+
+    // const UserPageComponent = () => (<UserPage users={this.state.users}
+    // {...this.props}/>)
 
     return (
       <Router>
@@ -32,7 +41,7 @@ class App extends Component {
             <Route exact path="/users" render={UserPageComponent}/>
             <Route exact path="/users/:userId" component={UserShow}/>
             {/* <Route exact path="/users/:userId/chores/:choreId" component={ChoresShow}/> */}
-            {/* <Route exact path="/rewards" component={RewardsPage}/> */}
+            <Route exact path="/rewards" component={RewardsPage}/>
           </Switch>
         {/* </div> */}
         

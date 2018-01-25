@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import NavBar from './NavBar'
@@ -8,7 +8,7 @@ import UserPage from './UserPage'
 
 const Container = styled.div `
 display: grid;
-grid-template-columns: 100px 1fr 1fr;
+grid-template-columns: 50%fr 1fr;
 grid-gap: 5px;
 margin: 5px;
 height: 80px;
@@ -27,9 +27,12 @@ class HomePage extends Component {
             <div>
                 <NavBar />
                 <Container>
-                <h1>Home Page Component</h1>
-                <UserList/>
-                <UserPage/>
+                    <div>
+                        <Link to="/users">Family</Link>
+                        <Link to="/rewards">Redeem Rewards</Link>
+                <h1>Home</h1>
+                {/* <UserPage/> */}
+                </div>
                 </Container>
             </div>
         )
