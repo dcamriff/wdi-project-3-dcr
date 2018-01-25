@@ -1,73 +1,81 @@
 import React, {Component} from 'react'
+import styled from 'styled-components'
+
+// STYLE
+const Input = styled.input`
+    width: 300px;
+    padding: 12px;
+    border: 1px solid black;   
+`
 
 class UserNewForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            newUser: { }
+            newUser: {}
         }
     }
 
-        handleInputChange = (event) => {
-            const attributeName = event.target.name
-            let attributeValue = event.target.value
-            const newUser = {
-                ...this.state.newUser
-            }
-            newUser[attributeName] = attributeValue
-            this.setState({newUser})
+    handleInputChange = (event) => {
+        const attributeName = event.target.name
+        let attributeValue = event.target.value
+        const newUser = {
+            ...this.state.newUser
         }
+        newUser[attributeName] = attributeValue
+        this.setState({newUser})
+    }
 
-        resetForm = () => {
-            const newUser = {...this.defaultState.newUser}
-            this.setState({newUser})
+    resetForm = () => {
+        const newUser = {
+            ...this.defaultState.newUser
         }
+        this.setState({newUser})
+    }
 
-        addNewUser = (event) => {
-            event.preventDefault()
-            this.props.addNewUser(this.state.newUser)
-            this.resetForm()
-        }
+    addNewUser = (event) => {
+        event.preventDefault()
+        this
+            .props
+            .addNewUser(this.state.newUser)
+        this.resetForm()
+    }
 
-
-
-
-        render() {
-            return (
+    render() {
+        return (
+            <div>
                 <div>
-                    <h1>Add User Form</h1>
-                    <div>
-                        <form onSubmit={this.addNewUser}>
-                        <input
+                    <form onSubmit={this.addNewUser}>
+                        <Input
                             name="firstName"
                             type="text"
                             placeholder="First Name"
                             value={this.state.newUser.firstName}
                             onChange={this.handleInputChange}/>
                         <br/>
-                        <input
+                        <Input
                             name="birthMonth"
                             type="text"
                             placeholder="Birth Month"
                             value={this.state.newUser.birthMonth}
                             onChange={this.handleInputChange}/>
                         <br/>
-                        <input
+                        <Input
                             name="profilePic"
                             type="text"
                             placeholder="URL to Profile Pic"
                             value={this.state.newUser.profilePic}
                             onChange={this.handleInputChange}/>
-                            <input type="submit"
-                            value="Add New User"/>
-
-
-                            </form>
-                    </div>
+                            <br/>
+                            <div>
+                                <input className="inputButton" type="submit" value="Add New User"/>
+                            </div>
+                    </form>
                 </div>
-            )
-        }
+            </div>
+        )
     }
+}
 
-    export default UserNewForm
+export default UserNewForm
