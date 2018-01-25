@@ -32,8 +32,8 @@ class UserPage extends Component {
         return (
             <div>
                 <h1>UserPage: showing all users</h1>
-                <button onClick={this.createUser}>New User</button>
-                <UserNewForm />
+                <button onClick={this.addUser}>New User</button>
+                <UserNewForm addNewUser={this.addNewUser} {...this.props}/>
                 <div>
                     {users.map((user) => {
                         return (
@@ -48,11 +48,7 @@ class UserPage extends Component {
                         })
                     }
                 </div>
-                {/* users={this.state.users}
-                    handleChange={this.handleChange}
-                    updateUser={this.updateUser}
-                    deleteUser={this.deleteUser}
-                    /> */}
+                
 
             </div>
 
