@@ -4,19 +4,12 @@ class UserNewForm extends Component {
     constructor(props) {
         super(props)
 
-        this.defaultState = {
-            newUser: {
-                firstName: '',
-                birthMonth: '',
-                timestamp: Date.now()
-            }
-        }
         this.state = {
-            ...this.defaultState
+            newUser: { }
         }
     }
 
-        _handleNewUserChange = (event) => {
+        handleInputChange = (event) => {
             const attributeName = event.target.name
             let attributeValue = event.target.value
             const newUser = {
@@ -26,16 +19,18 @@ class UserNewForm extends Component {
             this.setState({newUser})
         }
 
-        _resetForm = () => {
+        resetForm = () => {
             const newUser = {...this.defaultState.newUser}
             this.setState({newUser})
         }
 
-        _addNewUser = (event) => {
+        addNewUser = (event) => {
             event.preventDefault()
             this.props.addNewUser(this.state.newUser)
-            this._resetForm()
+            this.resetForm()
         }
+
+
 
 
         render() {
@@ -43,27 +38,27 @@ class UserNewForm extends Component {
                 <div>
                     <h1>Add User Form</h1>
                     <div>
-                        <form onSubmit={this._addNewUser}>
+                        <form onSubmit={this.addNewUser}>
                         <input
                             name="firstName"
                             type="text"
                             placeholder="First Name"
                             value={this.state.newUser.firstName}
-                            onChange={this._handleNewUserChange}/>
+                            onChange={this.handleInputChange}/>
                         <br/>
                         <input
                             name="birthMonth"
                             type="text"
                             placeholder="Birth Month"
                             value={this.state.newUser.birthMonth}
-                            onChange={this._handleNewUserChange}/>
+                            onChange={this.handleInputChange}/>
                         <br/>
                         <input
                             name="profilePic"
                             type="text"
                             placeholder="URL to Profile Pic"
                             value={this.state.newUser.profilePic}
-                            onChange={this._handleNewUserChange}/>
+                            onChange={this.handleInputChange}/>
                             <input type="submit"
                             value="Add New User"/>
 

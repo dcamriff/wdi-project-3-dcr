@@ -17,11 +17,12 @@ router.get('/', async (req, res) => {
 // CREATE A NEW USER
 router.post('/', async (req, res) => {
     try {
-        console.log('Create a User')
-        const newUser = await User.find({})
+        console.log('Before: Create a User: ', req.body)
+        console.log('After: Create a User: ', req.body.newUser)
+        const newUser = await User.create(req.body.newUser)
         res.json(newUser)
     }   catch (error) {
-        console.log(error)
+        console.log("Couldn't create user:", error)
         res.sendStatus(500)
     }
 })
