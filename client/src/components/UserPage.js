@@ -54,7 +54,15 @@ class UserPage extends Component {
 
                     <div>
                         {users.map((user) => {
-                            return (<div>{user.firstName}</div>
+                            return (
+                                <div>
+                                    {user.firstName}
+                                    {user.birthMonth}
+                                    <img 
+                                    width="50"
+                                    src={user.profilePic} alt=""/>
+                                </div>
+                                
                             )
                         })}
                     </div>
