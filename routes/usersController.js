@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
         res.sendStatus(500)
     }
 })
+
+// SHOW A SINGLE USER
+
     
 // CREATE A NEW USER
 router.post('/', async (req, res) => {

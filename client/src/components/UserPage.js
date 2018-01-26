@@ -56,6 +56,7 @@ class UserPage extends Component {
                 const users = [...this.state.users]
                 users.push(resUser)
                 this.setState({users})
+                console.log('FromPOST'+this.state.users)
 
             })
             .then(() => {
@@ -64,6 +65,19 @@ class UserPage extends Component {
             .catch(function (error) {
                 console.log(error)
             })
+    }
+
+    deleteUser = (user) => {
+        const userId = user._id
+        console.log('Deleting User')
+        axios
+            .delete(`/api/users/${userId}`)
+            .then(() => {
+                this.componentWillMount()
+            })
+            .catch(function (error) {
+                console.log(error)
+            })           
     }
 
     render() {
@@ -85,7 +99,8 @@ class UserPage extends Component {
                                     <div>
                                         <img width={100} src={user.profilePic} alt=""/><br/>
                                         {user.firstName}<br/>
-                                        {user.birthMonth}<br/>                                        
+                                        {user.birthMonth}<br/>
+                                        <button onClick={() => {this.deleteUser(user)}}>Delete User</button>                                        
                                     </div>
                                 )
                             })}
