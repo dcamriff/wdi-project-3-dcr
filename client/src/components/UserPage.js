@@ -65,6 +65,8 @@ class UserPage extends Component {
             .catch(function (error) {
                 console.log(error)
             })
+
+            return true;
     }
 
     deleteUser = (user) => {

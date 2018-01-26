@@ -29,19 +29,16 @@ class UserNewForm extends Component {
 
     resetForm = () => {
         const newUser = {}
-        this.setState({newUser: newUser})
-            // ...this.defaultState.newUser
-        // this.setState({newUser})
+        this.setState({newUser})
+        // ...this.defaultState.newUser
     }
 
     addNewUser = (event) => {
         event.preventDefault()
-        this
-            .props
-            .addNewUser(this.state.newUser)
-            .then(() => {
-                this.resetForm()
-            })
+        const newUser = {...this.state.newUser}
+        console.log("New User", newUser)
+        this.resetForm()
+        this.props.addNewUser(newUser)
     }
 
     render() {
