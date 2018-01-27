@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import NavBar from './NavBar'
 import UserNewForm from './UserNewForm'
+import UserEditForm from './UserEditForm'
 
 
 ////////////  CLASS  ///////////

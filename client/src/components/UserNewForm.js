@@ -68,7 +68,7 @@ class UserNewForm extends Component {
                             onChange={this.handleInputChange}/>
                             <br/>
                             <div>
-                                <input className="inputButton" type="submit" value="Add New User"/>
+                                <input className="input-button" type="submit" value="Add New User"/>
                             </div>
                     </form>
                 </div>
