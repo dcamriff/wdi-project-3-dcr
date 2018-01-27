@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import NavBar from './NavBar'
-import UserList from './UserList'
 import UserPage from './UserPage'
 
 const Container = styled.div `

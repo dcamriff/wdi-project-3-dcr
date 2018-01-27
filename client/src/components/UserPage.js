@@ -12,7 +12,10 @@ import UserEditForm from './UserEditForm'
 class UserPage extends Component {
 
     state = {
-        users: []
+        users: [],
+        newUser: {},
+        redirect: false,
+        newUserId: ''
     }
 
     async componentWillMount() {
@@ -68,6 +71,7 @@ class UserPage extends Component {
                         <h2>Family Members</h2>
                         <UserNewForm addNewUser={this.addNewUser} {...this.props}/>
                     </FormSection>
+                    
                     <div>
                         <UserContainer className="user-container">
                             {users.map((user) => {

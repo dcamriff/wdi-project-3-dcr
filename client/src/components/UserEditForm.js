@@ -6,6 +6,8 @@ const UserEditForm = (props) => (
     <div>
         <div>
             <form onSubmit={props.handleSubmit}>
+                <div>
+
                 <Input
                     name="firstName"
                     type="text"
@@ -27,8 +29,9 @@ const UserEditForm = (props) => (
                     value={props.user.profilePic}
                     onChange={(event) => {props.handleInputChange}}/>
                 <br/>
-
                 <input className="input-button" type="submit" value="Edit"/>
+                
+                </div>
             </form>
         </div>
     </div>
