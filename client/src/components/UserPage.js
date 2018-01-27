@@ -59,6 +59,15 @@ class UserPage extends Component {
             })           
     }
 
+    updateUser = async (user) => {
+        try {
+            await axios.patch(`/api/users/${user._id}`, user)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     render() {
         const users = this.state.users
         console.log('Under render', users)
@@ -77,10 +86,23 @@ class UserPage extends Component {
                             {users.map((user) => {
                                 return (
                                     <div>
-                                        <img width={100} src={user.profilePic} alt=""/><br/>
-                                        {user.firstName}<br/>
+                                        <a href={`/users/${user._id}`}>
+                                        <div>
+                                        <img width={100} src={user.profilePic} alt=""/>
+                                        <br/>
+                                        {user.firstName}
+                                        <br/>
+                                        </div>
+                                        </a>
                                         <p>Birth Month: {user.birthMonth}</p><br/>
+
+                                        {/* <UserEditForm 
+                                        user={this.state.user}
+                                        handleInputChange={this.handle.handleInputChange}
+                                        handleSubmit={this.handleSubmit}/> */}
+
                                         <button onClick={() => {this.deleteUser(user)}}>Delete</button>
+
                                         <button>Edit</button>                                        
                                     </div>
                                 )
