@@ -84,7 +84,7 @@ User
     .then(() => {
         const dad = new User({
             firstName: 'Dad',
-            profilePic: 'https://i.imgur.com/ZvIiZbT.png',
+            profilePic: 'https://i.imgur.com/WCWH3CA.png',
             birthMonth: 'June',
             chores: [
                 {
