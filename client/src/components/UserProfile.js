@@ -17,21 +17,16 @@ class UserProfile extends Component {
 
     getUserProfile = async() => {
         try {
-            const {userId} = this.props.match.params
-            const res = await axios.get('/api/users/${userId}')
-            this.setState({user: res.data})
+            console.log('Hello from getUserProfile')
+            const userId = this.props.match.params.userId
+            const res = await axios.get(`/api/users/${userId}`)
+            this.setState({user: res.data.user})
         } catch (error) {
             console.log(error)
         }
     }
 
-    deleteUser = async() => {
-        const userId = this.props.match.params.userId
-        console.log('Deleting User')
-        const res = await axios.delete(`/api/users/${userId}`)
-        console.log(res.data)
-        // this.setState({user: newUser})
-    }
+    
 
     handleInputChange = (event) => {
         const attributeName = event.target.name
@@ -59,32 +54,32 @@ class UserProfile extends Component {
     }
 
     render() {
-        const {user} = this.state
+        console.log(this.state.user)
+        const user = this.state.user
+        console.log(user)
+        console.log(this.state.user.user)
         if (this.state.redirect) {
             return (<Redirect to={`/users`}/>)
         }
         return (
             <div>This is a Show Page for individual user.
                 <div>
-                    <h1>Hello, {user.userName}</h1>
+                    <h1>Hello, {user.firstName}</h1>
                 </div>
 
                 <div>
-                    <img width={100} src={user.profilePic} alt={user.userName}/>
+                    <img width={100} src={this.state.user.profilePic} alt={user.firstName}/>
                     <br/> {user.firstName}<br/>
                     <p>Birthday Month: {user.birthMonth}</p><br/>
-                    <button
-                        onClick={() => {
-                        this.deleteUser(user)
-                    }}>Delete</button>
+                    
                     <button>Edit</button>
 
-                    <div>
+                    {/* <div>
                         user={this.state.user}
                         id={this.state.user._id}
                         handleInputChange={this.handleInputChange}
                         handleSubmit={this.handleSubmit}
-                    </div>
+                    </div> */}
 
                 </div>
 
