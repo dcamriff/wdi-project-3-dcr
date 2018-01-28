@@ -51,23 +51,23 @@ app.use(methodOverride('_method'))
 const usersController = require('./routes/usersController')
 app.use('/api/users', usersController)
 
-// const choresController = require('./routes/choresController')
-// app.use('/api/chores', choresController)
+const choresController = require('./routes/choresController')
+app.use('/api/users/:userId/chores', choresController)
 
 // const rewardsController = require('./routes/rewardsController')
-// app.use('/api/chores', rewardsController)
+// app.use('/api/rewards', rewardsController)
 
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res) {
+app.use(function(req, res, next) {
   var err = new Error('Not Found')
   err.status = 404
   next(err)
-});
+})
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {}
