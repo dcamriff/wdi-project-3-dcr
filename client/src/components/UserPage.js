@@ -32,7 +32,7 @@ class UserPage extends Component {
                 const users = [...this.state.users]
                 users.push(resUser)
                 this.setState({users})
-                console.log('FromPOST'+this.state.users)
+                console.log('FromPOST', this.state.users)
 
             })
             .then(() => {
@@ -43,8 +43,6 @@ class UserPage extends Component {
             })
             return true;
     }
-
-    
 
     deleteUser = (user) => {
         const userId = user._id
@@ -67,7 +65,8 @@ class UserPage extends Component {
         }
     }
 
-
+    // RENDER /////////////////////////////////////////////
+    
     render() {
         const users = this.state.users
         console.log('Under render', users)

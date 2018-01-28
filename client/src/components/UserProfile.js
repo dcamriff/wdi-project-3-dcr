@@ -3,16 +3,19 @@ import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
 import UserEditForm from './UserEditForm'
+import ChoreList from './ChoreList'
 
 class UserProfile extends Component {
 
     state = {
         user: {},
+        chores: [],
         redirect: false
     }
 
     componentWillMount() {
         this.getUserProfile()
+        this.getAllChores()
     }
 
     getUserProfile = async() => {
@@ -26,38 +29,48 @@ class UserProfile extends Component {
         }
     }
 
+    getAllChores = async() => {
+        try {
+            console.log('Hello from getAllChores')
+            const userId = this.props.match.params.userId
+            const res = await axios.get(`/api/users/${userId}/chores`)
+            const chores = res.data
+            this.setState({ chores })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     
+    // handleInputChange = (event) => {
+    //     const attributeName = event.target.name
+    //     let attributeValue = event.target.value
+    //     const newUser = {
+    //         ...this.state.newUser
+    //     }
+    //     newUser[attributeName] = attributeValue
+    //     this.setState({newUser})
+    // }
 
-    handleInputChange = (event) => {
-        const attributeName = event.target.name
-        let attributeValue = event.target.value
-        const newUser = {
-            ...this.state.newUser
-        }
-        newUser[attributeName] = attributeValue
-        this.setState({newUser})
-    }
+    // handleSubmit = async(event) => {
+    //     event.preventDefault()
+    //     const userId = this.props.match.params.userId
+    //     const payload = {
+    //         userName: this.state.user._id
+    //     }
+    //     const resetForm = {
+    //         userName: '',
+    //         birthMonth: '',
+    //         profilePic: ''
+    //     }
+    //     const res = await axios.patch(`/api/users/${userId}`, payload)
+    //     this.setState({user: res.data})
+    // }
 
-    handleSubmit = async(event) => {
-        event.preventDefault()
-        const userId = this.props.match.params.userId
-        const payload = {
-            userName: this.state.user._id
-        }
-        const resetForm = {
-            userName: '',
-            birthMonth: '',
-            profilePic: ''
-        }
-        const res = await axios.patch(`/api/users/${userId}`, payload)
-        this.setState({user: res.data})
-    }
+    //  RENDER ////////////////////////////////////////
 
     render() {
-        console.log(this.state.user)
         const user = this.state.user
-        console.log(user)
-        console.log(this.state.user.user)
+        console.log('getAllChores', this.state.chores)
         if (this.state.redirect) {
             return (<Redirect to={`/users`}/>)
         }
@@ -73,6 +86,7 @@ class UserProfile extends Component {
                     <p>Birthday Month: {user.birthMonth}</p><br/>
                     
                     <button>Edit</button>
+                    <ChoreList />
 
                     {/* <div>
                         user={this.state.user}
