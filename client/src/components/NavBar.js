@@ -29,7 +29,6 @@ div,
 }
 .header-title {
     justify-content: left;
-    font-family: 'Baloo Bhai', cursive;
     font-size: 25px
 }
 `
