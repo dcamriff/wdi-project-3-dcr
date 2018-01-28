@@ -41,7 +41,8 @@ const UserSchema = new Schema({
     },
     profilePic: {
         type: String,
-        required: false
+        required: false,
+        default: 'https://i.imgur.com/eNBw2Rw.png'
     },
     birthMonth: {
         type: String,

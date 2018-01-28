@@ -21,7 +21,7 @@ User
     .then(() => {
         const sylvie = new User({
             firstName: 'Sylvie',
-            profilePic: 'https://i.imgur.com/ALtfn7w.jpg',
+            profilePic: 'https://i.imgur.com/gmwsZ7d.png',
             birthMonth: 'December',
             chores: [
                 {
@@ -52,7 +52,7 @@ User
     .then(() => {
         const simone = new User({
             firstName: 'Simone',
-            profilePic: 'https://i.imgur.com/yIOfHBf.jpg',
+            profilePic: 'https://i.imgur.com/DDLhd42.png',
             birthMonth: 'March',
             chores: [
                 {
@@ -103,7 +103,7 @@ User
     .then(() => {
         const mom = new User({
             firstName: 'Mom',
-            profilePic: 'https://i.imgur.com/maDNYOB.png',
+            profilePic: 'https://i.imgur.com/zcvnGh8.png',
             birthMonth: 'January',
             chores: [
                 {
