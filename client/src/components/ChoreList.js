@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Chore from './Chore'
 
 class ChoreList extends Component {
 
@@ -27,9 +28,22 @@ class ChoreList extends Component {
 
 
     render () {
+        console.log('Passing Props Successful', this.props.chores)
+        const choresList = this.props.chores.map((chore, index) => {
+            return (
+                <Chore 
+                task = {this.props.task}
+                category = {this.props.category}
+                description = {this.props.description}
+                imageUrl = {this.props.imageUrl}
+                tokens = {this.props.tokens}
+                completed = {this.props.completed}/>
+            )
+        })
         return (
-            <div>hello
-                
+            <div>hello from ChoreList
+                {choresList}
+
             </div>
 
         )

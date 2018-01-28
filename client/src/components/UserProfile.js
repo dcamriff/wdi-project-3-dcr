@@ -86,7 +86,7 @@ class UserProfile extends Component {
                     <p>Birthday Month: {user.birthMonth}</p><br/>
                     
                     <button>Edit</button>
-                    <ChoreList />
+                    <ChoreList chores={this.state.chores}/>
 
                     {/* <div>
                         user={this.state.user}
