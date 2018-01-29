@@ -6,7 +6,7 @@ class Chore extends Component {
         console.log("CHORE", this.props.task)
         return (
             <div>
-            <img src={this.props.imageUrl} alt="task image"/>
+            <img width={75} src={this.props.imageUrl} alt="task image"/>
             <h3>task: {this.props.task}</h3>
             <div>category: {this.props.category}</div>
             <div>description: 
