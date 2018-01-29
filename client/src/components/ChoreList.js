@@ -32,12 +32,14 @@ class ChoreList extends Component {
         const choresList = this.props.chores.map((chore, index) => {
             return (
                 <Chore 
-                task = {this.props.task}
-                category = {this.props.category}
-                description = {this.props.description}
-                imageUrl = {this.props.imageUrl}
-                tokens = {this.props.tokens}
-                completed = {this.props.completed}/>
+                task = {this.props.chores[index].task}
+                category = {this.props.chores[index].category}
+                description = {this.props.chores[index].description}
+                imageUrl = {this.props.chores[index].imageUrl}
+                tokens = {this.props.chores[index].tokens}
+                completed = {this.props.chores[index].completed}
+                key={index}
+                />
             )
         })
         return (

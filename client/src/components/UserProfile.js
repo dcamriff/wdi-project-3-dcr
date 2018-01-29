@@ -3,7 +3,8 @@ import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
 import UserEditForm from './UserEditForm'
-import ChoreList from './ChoreList'
+//import ChoreList from './ChoreList'
+ import ChorePage from './ChorePage'
 
 class UserProfile extends Component {
 
@@ -35,7 +36,7 @@ class UserProfile extends Component {
             const userId = this.props.match.params.userId
             const res = await axios.get(`/api/users/${userId}/chores`)
             const chores = res.data
-            this.setState({ chores })
+            this.setState({chores})
         } catch (error) {
             console.log(error)
         }
@@ -86,7 +87,8 @@ class UserProfile extends Component {
                     <p>Birthday Month: {user.birthMonth}</p><br/>
                     
                     <button>Edit</button>
-                    <ChoreList chores={this.state.chores}/>
+                    {/* <ChoreList chores={this.state.chores}/> */}
+                    <ChorePage userId = {this.props.match.params.userId} chores = {this.state.chores}/>
 
                     {/* <div>
                         user={this.state.user}
