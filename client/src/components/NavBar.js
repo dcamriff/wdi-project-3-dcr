@@ -52,8 +52,6 @@ grid-gap: 5px;
 margin: 5px;
 height: 80px;
 
-
-div,
 .Link {
     display: grid;
     grid-template-columns: 33% 33% 33%;
