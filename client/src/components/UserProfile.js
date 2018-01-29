@@ -90,9 +90,9 @@ class UserProfile extends Component {
                     <br/>
                     <div>{user.firstName}</div>
                         <br/>
-                    <div>
-                    <img width={30}src={bdayLogo} alt="bday logo"/><span>     {user.birthMonth}</span>
-                    </div>
+                    <Birthday>
+                    <img width={30}src={bdayLogo} alt="bday logo"/>{user.birthMonth}
+                    </Birthday>
                     <br/>
                     
                     <button>Edit</button>
@@ -129,4 +129,7 @@ justify-items: center;
 img {
     padding: 0
 }
+`
+const Birthday = styled.div `
+display: flex;
 `
