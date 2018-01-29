@@ -88,7 +88,7 @@ class UserPage extends Component {
                                     <div>
                                         <a href={`/users/${user._id}`}>
                                         <div>
-                                        <img width={100} src={user.profilePic} alt=""/>
+                                        <img width={100} src={user.profilePic} alt="{user.firstName} image"/>
                                         <br/>
                                         {user.firstName}
                                         <br/>

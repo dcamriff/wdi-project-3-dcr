@@ -2,63 +2,70 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 
 
-class UserNewForm extends Component {
+class RewardNewForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            newUser: {}
+            newReward: {}
         }
     }
 
     handleInputChange = (event) => {
         const attributeName = event.target.name
         let attributeValue = event.target.value
-        const newUser = {
-            ...this.state.newUser
+        const newReward = {
+            ...this.state.newReward
         }
-        newUser[attributeName] = attributeValue
-        this.setState({newUser})
+        newReward[attributeName] = attributeValue
+        this.setState({newReward})
     }
 
     resetForm = () => {
-        const newUser = {}
-        this.setState({newUser})
-        // ...this.defaultState.newUser
+        const newReward = {}
+        this.setState({newReward})
+        // ...this.defaultState.newReward
     }
 
-    addNewUser = (event) => {
+    addNewReward = (event) => {
         event.preventDefault()
-        const newUser = {...this.state.newUser}
-        console.log("New User", newUser)
+        const newReward = {...this.state.newReward}
+        console.log("New User", newReward)
         this.resetForm()
-        this.props.addNewUser(newUser)
+        this.props.addNewReward(newReward)
     }
 
     render() {
         return (
             <div>
                 <div>
-                    <form onSubmit={this.addNewUser}>
+                    <form onSubmit={this.addNewReward}>
                         <Input
-                            name="firstName"
+                            name="level"
                             type="text"
-                            placeholder="First Name"
-                            value={this.state.newUser.firstName}
+                            placeholder="Level"
+                            value={this.state.newReward.level}
                             onChange={this.handleInputChange}/>
                         <br/>
                         <Input
-                            name="birthMonth"
+                            name="tokensWorth"
                             type="text"
-                            placeholder="Birth Month"
-                            value={this.state.newUser.birthMonth}
+                            placeholder="Tokens"
+                            value={this.state.newReward.level}
                             onChange={this.handleInputChange}/>
                         <br/>
                         <Input
-                            name="profilePic"
+                            name="reward"
+                            type="text"
+                            placeholder="Reward"
+                            value={this.state.newReward.reward}
+                            onChange={this.handleInputChange}/>
+                        <br/>
+                        <Input
+                            name="imageUrl"
                             type="text"
                             placeholder="URL to Profile Pic"
-                            value={this.state.newUser.profilePic}
+                            value={this.state.newReward.imageUrl}
                             onChange={this.handleInputChange}/>
                             <br/>
                             <div>
@@ -71,7 +78,7 @@ class UserNewForm extends Component {
     }
 }
 
-export default UserNewForm
+export default RewardNewForm
 
 // ///////////////////////////////////////
 //          STYLED COMPONENTS           //

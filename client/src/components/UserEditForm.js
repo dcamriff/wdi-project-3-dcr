@@ -11,6 +11,20 @@ class UserEditForm extends Component {
         }
     }
 
+    async componentWillMount() {
+        const response = await axios.get('/api/users')
+        this.setState({users: response.data})
+
+    }
+
+    updateUser = async (user) => {
+        try {
+            await axios.patch(`/api/users/${user._id}`, user)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     handleInputChange = (event) => {
         const attributeName = event.target.name
         let attributeValue = event.target.value
@@ -68,6 +82,7 @@ class UserEditForm extends Component {
                                 this.handleInputChange
                             }}/>
                             <br/>
+                            {/* <input className="input-button" type="submit" value="Edit"/> */}
                             <input className="input-button" type="submit" value="Edit"/>
 
                         </div>

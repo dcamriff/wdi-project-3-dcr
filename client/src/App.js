@@ -44,6 +44,7 @@ class App extends Component {
             {/* <Route exact path="/users/:userId/chores/:choreId" component={ChoresShow}/> */}
             <Route exact path="/rewards" component={RewardsPage}/>
             <Route exact path="/editUser" component={UserEditForm}/>
+            <Route exact path="/rewards" component={RewardsPage}/>
           </Switch>      
         
       </Router>

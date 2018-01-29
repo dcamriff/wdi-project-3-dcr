@@ -54,8 +54,8 @@ app.use('/api/users', usersController)
 const choresController = require('./routes/choresController')
 app.use('/api/users/:userId/chores', choresController)
 
-// const rewardsController = require('./routes/rewardsController')
-// app.use('/api/rewards', rewardsController)
+const rewardsController = require('./routes/rewardsController')
+app.use('/api/rewards', rewardsController)
 
 
 
