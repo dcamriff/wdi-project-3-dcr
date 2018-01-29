@@ -16,7 +16,26 @@ class NavBar extends Component {
                         alt="piggy chore rewarder logo"/>
                 </div>
                 <div className="header-title">Chore Rewarder</div>
-                <Link className="Link" to="/">Home</Link>
+                <div className="Link">
+                <Link to="/">
+                <img width={32}
+                        src="https://i.imgur.com/wfAUJHE.png" alt="home"/>
+                </Link>
+
+                <Link to="/users">
+                    <img 
+                    width={32}
+                    src="https://i.imgur.com/eNBw2Rw.png" 
+                    alt="users"/>
+                    </Link>
+
+                <Link to="/rewards">
+                    <img 
+                    width={32}
+                    src="https://i.imgur.com/RHEdDn2.png" 
+                    alt="rewards"/>
+                </Link>
+                </div>
             </Nav>
         )
     }
@@ -33,14 +52,17 @@ grid-gap: 5px;
 margin: 5px;
 height: 80px;
 
+
 div,
 .Link {
     display: grid;
+    grid-template-columns: 33% 33% 33%;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     text-decoration: none;
 }
+
 
 .Nav-logo {
     animation: Nav-logo-spin infinite 20s linear;

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import NavBar from './NavBar'
-import UserPage from './UserPage'
 
 
 class HomePage extends Component {

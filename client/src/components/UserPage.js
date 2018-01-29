@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 import UserNewForm from './UserNewForm'
 import UserEditForm from './UserEditForm'
+import bdayLogo from '../bday-icon.svg'
 
 
 ////////////  CLASS  ///////////
@@ -82,26 +83,32 @@ class UserPage extends Component {
                     </FormSection>
                     
                     <div>
-                        <UserContainer className="user-container">
+                        <UserContainer>
                             {users.map((user) => {
                                 return (
-                                    <div>
-                                        <a href={`/users/${user._id}`}>
-                                        <div>
-                                        <img width={100} src={user.profilePic} alt="{user.firstName} image"/>
-                                        <br/>
-                                        {user.firstName}
-                                        <br/>
-                                        </div>
-                                        </a>
-                                        <p>Birth Month: {user.birthMonth}</p><br/>
+                                    <div className="item">
+                                        <a className="item" href={`/users/${user._id}`}>                                        
+                                        <img className="item"
+                                            width={100} 
+                                            src={user.profilePic} 
+                                            alt="{user.firstName} image"/>
+                                            </a>                                        
+                                        <p className="item">{user.firstName}</p>
+                                        
+                                        
+                                        <img 
+                                        width={30}src={bdayLogo} 
+                                        alt="bday logo"/>{user.birthMonth}
+                                        
+                                        
 
                                         {/* <UserEditForm 
                                         user={this.state.user}
                                         handleInputChange={this.handle.handleInputChange}
                                         handleSubmit={this.handleSubmit}/> */}
-
+                                        
                                         <button onClick={() => {this.deleteUser(user)}}>Delete</button>
+                                        
 
                                         {/* <UserEditForm /> */}
 
@@ -134,18 +141,16 @@ const UserContainer = styled.div `
 display: grid;
 grid-template-columns: 33% 33% 33%;
 grid-gap: 5px;
-margin: 10px;
-justify-content: center;
-padding: 30px;
+/* margin: 10px; */
+padding: 10px;
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
 @media (max-width: 768px) {
     /* For mobile phones: */
 grid-template-columns: 100%;
-
-/* div.user-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-} */
 `
