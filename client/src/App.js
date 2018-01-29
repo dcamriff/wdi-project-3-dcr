@@ -6,6 +6,7 @@ import HomePage from './components/HomePage'
 import UserPage from './components/UserPage'
 import UserProfile from './components/UserProfile'
 import RewardsPage from './components/RewardsPage'
+import UserEditForm from './components/UserEditForm'
 
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
             <Route exact path="/users/:userId" component={UserProfile}/>
             {/* <Route exact path="/users/:userId/chores/:choreId" component={ChoresShow}/> */}
             <Route exact path="/rewards" component={RewardsPage}/>
+            <Route exact path="/editUser" component={UserEditForm}/>
           </Switch>      
         
       </Router>

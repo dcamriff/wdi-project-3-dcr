@@ -6,7 +6,8 @@ console.log("HELLOLOOL", props.chores)
 
     return(
         <div>
-            Hello from ChorePage
+            <h2>This Week's Chores</h2>
+            
             <ChoreList userId ={props.userId} chores={props.chores} task = {props.chores.task}/>
         </div>
     )

@@ -43,8 +43,10 @@ class ChoreList extends Component {
             )
         })
         return (
-            <div>hello from ChoreList
+            <div>
+                <ChoresWrapper>
                 {choresList}
+                </ChoresWrapper>
 
             </div>
 
@@ -53,3 +55,16 @@ class ChoreList extends Component {
 }
 
 export default ChoreList
+
+// ///////////////////////////////////////
+//          STYLED COMPONENTS           //
+// ///////////////////////////////////////
+
+const ChoresWrapper = styled.div `
+display: grid;
+grid-template-columns: 33% 33% 33%;
+grid-gap: 5px;
+margin: 10px;
+justify-content: center;
+padding: 30px;
+`

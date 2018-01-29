@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import UserNewForm from './UserNewForm'
@@ -66,7 +67,7 @@ class UserPage extends Component {
     }
 
     // RENDER /////////////////////////////////////////////
-    
+
     render() {
         const users = this.state.users
         console.log('Under render', users)
@@ -102,7 +103,11 @@ class UserPage extends Component {
 
                                         <button onClick={() => {this.deleteUser(user)}}>Delete</button>
 
-                                        <button>Edit</button>                                        
+                                        {/* <UserEditForm /> */}
+
+                                        {/* <Link to={'/editUser'}>
+                                        <button>Edit</button>  
+                                        </Link> */}
                                     </div>
                                 )
                             })}
@@ -125,7 +130,6 @@ const FormSection = styled.div `
 display: grid;
 justify-content: center;
 margin: 5px;
-justify-content: center;
 `
 
 const UserContainer = styled.div `

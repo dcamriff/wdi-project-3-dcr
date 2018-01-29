@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
 
 import UserEditForm from './UserEditForm'
-//import ChoreList from './ChoreList'
- import ChorePage from './ChorePage'
+import ChorePage from './ChorePage'
+import NavBar from './NavBar'
 
 class UserProfile extends Component {
 
@@ -76,19 +77,24 @@ class UserProfile extends Component {
             return (<Redirect to={`/users`}/>)
         }
         return (
-            <div>This is a Show Page for individual user.
+            <div>
+                <NavBar />
                 <div>
                     <h1>Hello, {user.firstName}</h1>
                 </div>
 
                 <div>
+                    <FormSection>
                     <img width={100} src={this.state.user.profilePic} alt={user.firstName}/>
                     <br/> {user.firstName}<br/>
                     <p>Birthday Month: {user.birthMonth}</p><br/>
                     
                     <button>Edit</button>
-                    {/* <ChoreList chores={this.state.chores}/> */}
-                    <ChorePage userId = {this.props.match.params.userId} chores = {this.state.chores}/>
+                    </FormSection>
+                
+                    <ChorePage 
+                    userId = {this.props.match.params.userId} 
+                    chores = {this.state.chores}/>
 
                     {/* <div>
                         user={this.state.user}
@@ -96,6 +102,7 @@ class UserProfile extends Component {
                         handleInputChange={this.handleInputChange}
                         handleSubmit={this.handleSubmit}
                     </div> */}
+                    
 
                 </div>
 
@@ -105,3 +112,13 @@ class UserProfile extends Component {
 }
 
 export default UserProfile
+
+// ///////////////////////////////////////
+//          STYLED COMPONENTS           //
+// ///////////////////////////////////////
+
+const FormSection = styled.div `
+display: grid;
+justify-content: center;
+/* margin: 5px; */
+`
