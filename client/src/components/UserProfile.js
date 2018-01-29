@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 import UserEditForm from './UserEditForm'
+import UserEditForm2 from './UserEditForm2'
 import ChorePage from './ChorePage'
 import NavBar from './NavBar'
 import bdayLogo from '../bday-icon.svg'
@@ -43,31 +44,32 @@ class UserProfile extends Component {
             console.log(error)
         }
     }
-    
-    // handleInputChange = (event) => {
-    //     const attributeName = event.target.name
-    //     let attributeValue = event.target.value
-    //     const newUser = {
-    //         ...this.state.newUser
-    //     }
-    //     newUser[attributeName] = attributeValue
-    //     this.setState({newUser})
-    // }
 
-    // handleSubmit = async(event) => {
-    //     event.preventDefault()
-    //     const userId = this.props.match.params.userId
-    //     const payload = {
-    //         userName: this.state.user._id
-    //     }
-    //     const resetForm = {
-    //         userName: '',
-    //         birthMonth: '',
-    //         profilePic: ''
-    //     }
-    //     const res = await axios.patch(`/api/users/${userId}`, payload)
-    //     this.setState({user: res.data})
-    // }
+    handleInputChange = (event) => {
+        console.log('Changing user profile', event.target.name, event.target.value)
+        const attributeName = event.target.name
+        let attributeValue = event.target.value
+
+        const user = {
+            ...this.state.user
+        }
+        user[attributeName] = attributeValue
+        this.setState({user})
+    }
+
+    handleSubmit = async(event) => {
+        event.preventDefault()
+        const userId = {
+            _id: this.state.user._id,
+            firstName: this.state.user.firstName,
+            birthMonth: this.state.user.birthMonth,
+            profilePic: this.state.user.profilePic
+        }
+        console.log('Updating User', userId)
+        const res = await axios.patch(`/api/users/${this.state.user._id}`, userId)
+        console.log('Posting User', res.data)
+        this.setState({redirect: false, newUser: res.data.user})
+    }
 
     //  RENDER ////////////////////////////////////////
 
@@ -79,57 +81,50 @@ class UserProfile extends Component {
         }
         return (
             <div>
-                <NavBar />
+                <NavBar/>
                 <div>
                     <h1>Hello, {user.firstName}</h1>
                 </div>
 
-                <div>
-                    <UserSection>
+                <UserSection>
                     <img width={100} src={this.state.user.profilePic} alt={user.firstName}/>
-                    <br/>
+
                     <div>{user.firstName}</div>
-                        <br/>
-                    <Birthday>
-                    <img width={30}src={bdayLogo} alt="bday logo"/>{user.birthMonth}
-                    </Birthday>
-                    <br/>
-                    
-                    <button>Edit</button>
-                    </UserSection>
-                
-                    <ChorePage 
-                    userId = {this.props.match.params.userId} 
-                    chores = {this.state.chores}/>
 
-                    {/* <div>
+                    <div>
+                        <img width={30} src={bdayLogo} alt="bday logo"/>{user.birthMonth}
+                    </div>
+
+                </UserSection>
+
+                <FormSection>
+                    <UserEditForm2
                         user={this.state.user}
-                        id={this.state.user._id}
                         handleInputChange={this.handleInputChange}
-                        handleSubmit={this.handleSubmit}
-                    </div> */}
-                    
+                        handleSubmit={this.handleSubmit}/>
+                </FormSection>
 
-                </div>
+                <ChorePage userId={this.props.match.params.userId} chores={this.state.chores}/>
 
             </div>
+
         )
     }
 }
 
 export default UserProfile
 
-
 // STYLED COMPONENTS /////////////////////
+
+const FormSection = styled.div `
+display: grid;
+justify-content: center;
+margin: 5px;
+`
 
 const UserSection = styled.div `
 display: grid;
 justify-items: center;
 
-img {
-    padding: 0
-}
-`
-const Birthday = styled.div `
-display: flex;
+
 `
