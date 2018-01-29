@@ -82,21 +82,21 @@ class RewardsPage extends Component {
                     </FormSection>
                     
                     <div>
-                        <RewardContainer className="reward-container">
+                        <RewardContainer>
                             {rewards.map((reward) => {
                                 return (
-                                    <div>
-                                        <a href={`/rewards/${reward._id}`}>
-                                            <div>
-                                            <img width={100} src={reward.imageUrl} alt="reward image"/>
-                                            <br/>
-                                            {reward.level}
-                                            <br/>
-                                            </div>
-                                            </a>
+                                    
+                                    <div>                                
+                                        {/* <a href={`/rewards/${reward._id}`}> */}
+                                        <img width={200} src={reward.imageUrl} alt="reward image"/>
+                                            {/* <div> */}
+                                            <Reward>{reward.reward}</Reward>                                            
+                                            {/* {reward.level} */}                                            
+                                            {/* </div> */}
+                                            {/* </a> */}
 
-                                        <p>Tokens Needed: {reward.tokensWorth}</p><br/>
-                                        <p>Reward: {reward.reward}</p><br/>
+                                        <p>Tokens Needed: {reward.tokensWorth}</p>
+                                        
 
                                         {/* <RewardEditForm 
                                         reward={this.state.reward}
@@ -104,6 +104,8 @@ class RewardsPage extends Component {
                                         handleSubmit={this.handleSubmit}/> */}
 
                                         <button onClick={() => {this.deleteReward(reward)}}>Delete</button>
+                                        <br/>
+                                        <br/>
 
                                         {/* <RewardEditForm /> */}
 
@@ -137,19 +139,23 @@ margin: 5px;
 const RewardContainer = styled.div `
 display: grid;
 grid-template-columns: 33% 33% 33%;
-grid-gap: 5px;
-margin: 10px;
+grid-gap: 10px;
+/* margin: 5px; */
 justify-content: center;
-padding: 30px;
+justify-items: center;
+padding: 0px;
 
 img {
     border-radius: 50%;
 }
 
-/* div.reward-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-} */
+@media (max-width: 768px) {
+    /* For mobile phones: */
+grid-template-columns: 100%;
+    }
+
+`
+
+const Reward = styled.h3`
+margin: 0;
 `

@@ -140,6 +140,10 @@ margin: 10px;
 justify-content: center;
 padding: 30px;
 
+@media (max-width: 768px) {
+    /* For mobile phones: */
+grid-template-columns: 100%;
+
 /* div.user-container {
     display: grid;
     justify-content: center;

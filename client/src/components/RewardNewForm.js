@@ -30,7 +30,7 @@ class RewardNewForm extends Component {
     addNewReward = (event) => {
         event.preventDefault()
         const newReward = {...this.state.newReward}
-        console.log("New User", newReward)
+        console.log("New Reward", newReward)
         this.resetForm()
         this.props.addNewReward(newReward)
     }
@@ -51,7 +51,7 @@ class RewardNewForm extends Component {
                             name="tokensWorth"
                             type="text"
                             placeholder="Tokens"
-                            value={this.state.newReward.level}
+                            value={this.state.newReward.tokensWorth}
                             onChange={this.handleInputChange}/>
                         <br/>
                         <Input
@@ -69,7 +69,7 @@ class RewardNewForm extends Component {
                             onChange={this.handleInputChange}/>
                             <br/>
                             <div>
-                                <input className="input-button" type="submit" value="Add New User"/>
+                                <input className="input-button" type="submit" value="Add New Reward"/>
                             </div>
                     </form>
                 </div>
