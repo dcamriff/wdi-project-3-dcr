@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   font-family: 'Baloo Bhai', cursive;
   background-color: #5e6a88;
   /* background-color: #dd614a; */
@@ -10,3 +10,9 @@ a {
   text-decoration: none;
   color: #e8e9eb;
 }
+
+h1,
+h2 {
+  padding: 0 20px;
+}
+

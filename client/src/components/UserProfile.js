@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import UserEditForm from './UserEditForm'
 import ChorePage from './ChorePage'
 import NavBar from './NavBar'
+import bdayLogo from '../bday-icon.svg'
 
 class UserProfile extends Component {
 
@@ -84,13 +85,18 @@ class UserProfile extends Component {
                 </div>
 
                 <div>
-                    <FormSection>
+                    <UserSection>
                     <img width={100} src={this.state.user.profilePic} alt={user.firstName}/>
-                    <br/> {user.firstName}<br/>
-                    <p>Birthday Month: {user.birthMonth}</p><br/>
+                    <br/>
+                    <div>{user.firstName}</div>
+                        <br/>
+                    <div>
+                    <img width={30}src={bdayLogo} alt="bday logo"/><span>     {user.birthMonth}</span>
+                    </div>
+                    <br/>
                     
                     <button>Edit</button>
-                    </FormSection>
+                    </UserSection>
                 
                     <ChorePage 
                     userId = {this.props.match.params.userId} 
@@ -113,12 +119,14 @@ class UserProfile extends Component {
 
 export default UserProfile
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
 
-const FormSection = styled.div `
+// STYLED COMPONENTS /////////////////////
+
+const UserSection = styled.div `
 display: grid;
-justify-content: center;
-/* margin: 5px; */
+justify-items: center;
+
+img {
+    padding: 0
+}
 `

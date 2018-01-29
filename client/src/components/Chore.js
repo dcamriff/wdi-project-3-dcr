@@ -1,23 +1,27 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 
 class Chore extends Component {
-    render () {
+    render() {
         console.log("CHORE", this.props.task)
         return (
             <ChoreContainer>
-            <img width={75} src={this.props.imageUrl} alt="task image"/><br/>
-            <h3>{this.props.task}</h3>
-            <div>category: {this.props.category}</div>
-            {/* <div>description:  */}
-                <p>{this.props.description}</p>
-                {/* </div> */}
-            <div>tokens: 
-                <p>{this.props.tokens}</p>
+                <div>
+                    <img width={75} src={this.props.imageUrl} alt="task image"/>
+                </div><br/>
+                <div>
+                    <h3>{this.props.task}</h3>
                 </div>
-            <input type="checkbox"/>
+                <div>category: {this.props.category}</div>
+                <div>
+                    <p>{this.props.description}</p>
+                </div>
+                <div>tokens:
+                    <p>{this.props.tokens}</p>
+                </div>
+                <input type="checkbox"/>
 
-        </ChoreContainer>
+            </ChoreContainer>
 
         )
     }
@@ -25,16 +29,20 @@ class Chore extends Component {
 
 export default Chore
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const ChoreContainer = styled.div `
 display: grid;
 /* grid-template-columns: 33% 33% 33%; */
 /* grid-gap: 5px; */
 margin: 2px;
+justify-content: center;
 justify-items: center;
 padding: 5px;
 border: 1px solid black;
+
+h3 {
+    /* color: #5b0b4c; */
+    color: #ff5035;
+}
 `

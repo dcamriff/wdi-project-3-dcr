@@ -31,6 +31,7 @@ class ChoreList extends Component {
         console.log('Passing Props Successful', this.props.chores)
         const choresList = this.props.chores.map((chore, index) => {
             return (
+                <div>
                 <Chore 
                 task = {this.props.chores[index].task}
                 category = {this.props.chores[index].category}
@@ -40,6 +41,7 @@ class ChoreList extends Component {
                 completed = {this.props.chores[index].completed}
                 key={index}
                 />
+                </div>
             )
         })
         return (
@@ -66,5 +68,7 @@ grid-template-columns: 33% 33% 33%;
 grid-gap: 5px;
 margin: 10px;
 justify-content: center;
+align-items: center;
+/* justify-items: center; */
 padding: 30px;
 `
