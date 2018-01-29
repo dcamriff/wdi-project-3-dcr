@@ -95,7 +95,8 @@ class UserEditForm extends Component {
 
 export default UserEditForm
 
-// STYLE ///////////////
+// STYLED COMPONENTS /////////////////////
+
 const Input = styled.input `
     width: 300px;
     padding: 12px;

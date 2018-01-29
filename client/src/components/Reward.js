@@ -52,9 +52,7 @@ const Reward = (props) => {
 
 export default Reward
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const RewardWrapper = styled.div `
 display: grid;

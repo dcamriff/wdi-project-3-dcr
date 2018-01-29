@@ -3,6 +3,29 @@ import logo from '../piggy-logo.svg'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+
+class NavBar extends Component {
+    render() {
+        return (
+            <Nav>
+                <div>
+                    <img
+                        className="Nav-logo"
+                        width="75"
+                        src={logo}
+                        alt="piggy chore rewarder logo"/>
+                </div>
+                <div className="header-title">Chore Rewarder</div>
+                <Link className="Link" to="/">Home</Link>
+            </Nav>
+        )
+    }
+}
+
+export default NavBar
+
+// STYLED COMPONENTS /////////////////////
+
 const Nav = styled.div `
 display: grid;
 grid-template-columns: 100px 2fr 1fr;
@@ -32,23 +55,3 @@ div,
     font-size: 25px
 }
 `
-
-class NavBar extends Component {
-    render() {
-        return (
-            <Nav>
-                <div>
-                    <img
-                        className="Nav-logo"
-                        width="75"
-                        src={logo}
-                        alt="piggy chore rewarder logo"/>
-                </div>
-                <div className="header-title">Chore Rewarder</div>
-                <Link className="Link" to="/">Home</Link>
-            </Nav>
-        )
-    }
-}
-
-export default NavBar

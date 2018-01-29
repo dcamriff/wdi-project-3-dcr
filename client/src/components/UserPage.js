@@ -122,9 +122,7 @@ class UserPage extends Component {
 
 export default UserPage
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const FormSection = styled.div `
 display: grid;

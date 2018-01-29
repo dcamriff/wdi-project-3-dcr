@@ -80,9 +80,7 @@ class RewardNewForm extends Component {
 
 export default RewardNewForm
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const Input = styled.input`
     width: 300px;

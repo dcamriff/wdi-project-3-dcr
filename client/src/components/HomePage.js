@@ -5,20 +5,6 @@ import styled from 'styled-components'
 import NavBar from './NavBar'
 import UserPage from './UserPage'
 
-const Container = styled.div `
-display: grid;
-grid-template-columns: 50%fr 1fr;
-grid-gap: 5px;
-margin: 5px;
-height: 80px;
-
-div {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-}
-`
 
 class HomePage extends Component {
     render() {
@@ -39,3 +25,20 @@ class HomePage extends Component {
 }
 
 export default HomePage
+
+// STYLED COMPONENTS /////////////////////
+
+const Container = styled.div `
+display: grid;
+grid-template-columns: 50%fr 1fr;
+grid-gap: 5px;
+margin: 5px;
+height: 80px;
+
+div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+}
+`

@@ -126,9 +126,7 @@ class RewardsPage extends Component {
 
 export default RewardsPage
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const FormSection = styled.div `
 display: grid;

@@ -1,9 +1,6 @@
 import React from 'react'
-
 import Reward from './Reward'
 
-
-// STYLE //////////////////////////
 
 // STATELESS FUNCTION /////////////
 

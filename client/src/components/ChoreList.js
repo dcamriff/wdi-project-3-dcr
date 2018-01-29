@@ -4,8 +4,6 @@ import Chore from './Chore'
 
 class ChoreList extends Component {
 
-
-
     // addNewChore = (newChore) => {
     //     console.log(newChore)
     //     axios.post(`/api/chores`, {newChore}).then(response => {
@@ -58,9 +56,7 @@ class ChoreList extends Component {
 
 export default ChoreList
 
-// ///////////////////////////////////////
-//          STYLED COMPONENTS           //
-// ///////////////////////////////////////
+// STYLED COMPONENTS /////////////////////
 
 const ChoresWrapper = styled.div `
 display: grid;
