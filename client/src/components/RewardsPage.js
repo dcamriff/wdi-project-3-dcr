@@ -142,6 +142,10 @@ margin: 10px;
 justify-content: center;
 padding: 30px;
 
+img {
+    border-radius: 50%;
+}
+
 /* div.reward-container {
     display: grid;
     justify-content: center;
