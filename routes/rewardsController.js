@@ -32,9 +32,9 @@ router.get('/:rewardId', async(req, res) => {
 router.post('/', async(req, res) => {
     try {
         console.log('Before: Create a Reward: ', req.body)
-        console.log('After: Create a Reward: ', req.body.newUser)
-        const newUser = await Reward.create(req.body.newUser)
-        res.json(newUser)
+        console.log('After: Create a Reward: ', req.body.newReward)
+        const newReward = await Reward.create(req.body.newReward)
+        res.json(newReward)
     } catch (error) {
         console.log("Couldn't create reward:", error)
         res.sendStatus(500)
@@ -55,9 +55,9 @@ router.delete('/:rewardId', async(req, res) => {
 // EDIT A REWARD
 router.patch('/:rewardId', async(req, res) => {
     try {
-        const updatedUser = await Reward.findByIdAndUpdate(req.params.rewardId, req.body, {new: true})
+        const updatedReward = await Reward.findByIdAndUpdate(req.params.rewardId, req.body, {new: true})
 
-        res.json(updatedUser)
+        res.json(updatedReward)
     } catch (error) {
         console.log(error)
         res.sendStatus(500)
