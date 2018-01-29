@@ -13,10 +13,25 @@ class HomePage extends Component {
                 <NavBar />
                 <Container>
                     <div>
-                        <Link to="/users">Family</Link>
-                        <Link to="/rewards">Redeem Rewards</Link>
-                <h1>Home</h1>
-                {/* <UserPage/> */}
+                    <h3>Pitch In + Get Rewarded!</h3>
+                        <Link to="/users">
+                        <div className="item">
+                        <img className="item"
+                        width={165}
+                        src="https://i.imgur.com/eNBw2Rw.png" alt="family"/>
+                        <p className="item">Family Members</p>
+                        </div>
+                        <br/>
+                        
+                        </Link>
+                        <Link to="/rewards">
+                        <div className="item">
+                        <img className="item"
+                        width={175}
+                        src="https://i.imgur.com/RHEdDn2.png" alt="rewards"/>
+                        <p className="item">Redeem Rewards</p>
+                        </div>                        
+                        </Link>
                 </div>
                 </Container>
             </div>
@@ -33,12 +48,19 @@ display: grid;
 grid-template-columns: 50%fr 1fr;
 grid-gap: 5px;
 margin: 5px;
+padding: 10px;
 height: 80px;
+justify-content: center;
+align-items: center;
 
-div {
+.item {
     display: grid;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
 }
+
+@media (max-width: 768px) {
+    /* For mobile phones: */
+grid-template-columns: 100%;
+
 `
