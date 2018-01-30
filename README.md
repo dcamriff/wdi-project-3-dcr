@@ -25,7 +25,7 @@ Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned 
 
 
 ## TECHNOLOGIES USED
- - Languages &  Libraries- HTML5, CSS3, Node.js, Express, React
+ - Languages &  Libraries- HTML5, CSS3, Node.js, Express, React, React Router, React Dev Tools, Chrome Dev Tools
  - Database Management - MongoDB, Heroku
  - Design - Figma, Adobe Creative Cloud (Illustrator and Photoshop), Google Fonts, Annimate.css, PNGtree.com, CSS Grid
  - Project Planning & User Stories - Trello
@@ -34,11 +34,13 @@ Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned 
 
  ## FEATURES
  - Create, View, Delete, and Update Family Members
- - Create, View, Delete, and Update Chores connected to a user
- - View, Update, and Delete Reward Details
  - Responsiveness on different screen sizes
  - Animation
 
  ## FUTURE DEVELOPMENT
-  - Ability to like and dislike chores with a thumbs up/down button
-  - Ability to text parents when a chore is completed
+ - Admin view
+ - Create, View, Delete, and Update Chores connected to a user
+ - View, Update, and Delete Reward Details
+ - Ability to like and dislike chores with a thumbs up/down button
+ - Ability to text parents when a chore is completed
+ - YouTube API to show example videos for more detailed chores
