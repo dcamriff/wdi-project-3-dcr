@@ -4,7 +4,6 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 import UserEditForm from './UserEditForm'
-import UserEditForm2 from './UserEditForm2'
 import ChorePage from './ChorePage'
 import NavBar from './NavBar'
 import bdayLogo from '../bday-icon.svg'
@@ -98,7 +97,7 @@ class UserProfile extends Component {
                 </UserSection>
 
                 <FormSection>
-                    <UserEditForm2
+                    <UserEditForm
                         user={this.state.user}
                         handleInputChange={this.handleInputChange}
                         handleSubmit={this.handleSubmit}/>
