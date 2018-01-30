@@ -17,6 +17,7 @@ I have two young girls at home, who occasionally like to help with chores, and s
 Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned out my project.
 
 ## WIREFRAMES
+You can see my updated wireframes [here](https://www.figma.com/file/Tu86P6x7GbKfzEZH3PoTzj3c/Untitled)
 ![ERD-Chore-Rewarder](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/ERD-chore-rewarder.png)<br/>
 ![iPhone-Home-Page](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/iPhone%20SE.png)<br/>
 ![Desktop-Home-Page](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/Desktop%20HD.png)<br/>
