@@ -19,11 +19,6 @@ Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned 
 ## WIREFRAMES
 ![Gig-Posters-Home-Page-Wireframe](https://github.com/dcamriff/gig-posters-wdi/blob/master/public/images/wireframes/Desktop%20HD.png)
 
-![Gig-Posters-User-Profile-Wireframe](https://github.com/dcamriff/gig-posters-wdi/blob/master/public/images/wireframes/Desktop%20HD-user.png)
-
-![Gig-Posters-Poster-Collection-Wireframe](https://github.com/dcamriff/gig-posters-wdi/blob/master/public/images/wireframes/Desktop%20HD-posters.png)
-
-![Gig-Posters-Poster-Profile-Wireframe](https://github.com/dcamriff/gig-posters-wdi/blob/master/public/images/wireframes/Desktop%20HD-poster%20details.png)
 
 
 ## TECHNOLOGIES USED

@@ -95,7 +95,13 @@ class UserPage extends Component {
                                             </a>                                        
                                         <p className="item">{user.firstName}</p>
                                         
-                                        
+                                        <div>
+                                        <img 
+                                        width={30}src={bdayLogo} 
+                                        alt="bday logo"/>
+                                        <p>{user.birthMonth}</p>
+
+                                        </div>
                                         <img 
                                         width={30}src={bdayLogo} 
                                         alt="bday logo"/>{user.birthMonth}
