@@ -17,11 +17,11 @@ I have two young girls at home, who occasionally like to help with chores, and s
 Link to my [Trello Board](https://trello.com/b/twPQzL2F/wdi-p3) where I planned out my project.
 
 ## WIREFRAMES
-![ERD-Chore-Rewarder](wdi-project-3-dcr/public/images/ERD-chore-rewarder.png)
-![iPhone-Home-Page](wdi-project-3-dcr/public/images/iPhone SE.png)
-![Desktop-Home-Page](wdi-project-3-dcr/public/images/Desktop HD.png)
-![iPhone-User-Profile](wdi-project-3-dcr/public/images/iPhone SE-User Profile.png)
-![Desktop-User-Profile](wdi-project-3-dcr/public/images/Desktop HD-User Profile.png)
+![ERD-Chore-Rewarder](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/ERD-chore-rewarder.png)
+![iPhone-Home-Page](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/iPhone%20SE.png)
+![Desktop-Home-Page](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/Desktop%20HD.png)
+![iPhone-User-Profile](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/iPhone%20SE-User%20Profile.png)
+![Desktop-User-Profile](https://github.com/dcamriff/wdi-project-3-dcr/blob/master/public/images/Desktop%20HD-User%20Profile.png)
 
 
 ## TECHNOLOGIES USED
